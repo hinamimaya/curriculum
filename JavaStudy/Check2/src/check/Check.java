@@ -3,22 +3,29 @@ package check;
 import constants.Constants;
 
 public class Check {
-	private static String firstName = "日並";
-	private static String lastName = "真野";
-	public static String getFirstName() {
-		return firstName;
+	private String firstName;
+	private String lastName;
+	
+	public Check() {
+		this.firstName = "日並";
+		this.lastName = "真野";
 	}
-	public static String getLastName() {
-		return lastName;
+	
+	protected String getFirstName(){
+		return this.firstName;
 	}
-    public static void printName(){
-    	System.out.println("printNameメソッド → " + firstName + lastName);
+	
+	protected String getLastName() {
+		return this.lastName;
+	}
+	
+    public void printName(){
+    	System.out.println("printNameメソッド → " + this.firstName + this.lastName);
     }
-	
-    
-	
+		
 	public static void main(String[] args) {
-		Check.printName();
+		Check check = new Check();
+		check.printName();
 		Pet pet = new Pet(Constants.CHECK_CLASS_JAVA, Constants.CHECK_CLASS_HOGE);
 		pet.introduce();
 	    RobotPet robotPet = new RobotPet(Constants.CHECK_CLASS_R2D2, Constants.CHECK_CLASS_LUKE);
