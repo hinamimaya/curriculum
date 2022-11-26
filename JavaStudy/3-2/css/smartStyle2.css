@@ -4,10 +4,14 @@
     }
     .left{
         width: 100px;
+        height: 140px;
     }
-    /* .right{
-        float: none;
-    } */
+    .right{
+        width: 200px;
+    }
+    .riup{
+        width: 125px;
+    }
 
     .up{
         width: 125px;
@@ -47,6 +51,7 @@
     }
     .ririg{
         width: 150px;
+        float: left;
     }
     .ridown{
         width: 150px;
