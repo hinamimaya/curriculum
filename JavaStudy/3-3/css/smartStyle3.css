@@ -1,0 +1,33 @@
+@media screen and (max-width: 479px) {
+    .header{
+        width: 200px;
+        height: 200px;
+    }
+    .box1{
+        width: 60px;
+        height: 160px;
+        flex-flow: column;
+        margin-left: 70px;
+    }
+    
+    .main{
+        width: 200px;
+        float: none;
+    }
+
+    .left{
+        width: 200px;
+        height: 100px;
+    }
+    .right{
+        width: 200px;
+        height: 220px;
+    }
+    .rightin{
+        padding-top: 20px;
+        padding-left: 30px;
+    }
+    .footer{
+        width: 200px;
+    }
+}
