@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+formatDate{
+	background-color: gray;
+display: inline-block;
+padding: 10px;
+color: white;
+}
+
+.footer{
+	background-color: gray;
+display: inline-block;
+padding: 10px;
+color: white;
+}
+
+SimpleDateFormat{
+	padding: 10px;
+font-size: 10px;
+}
