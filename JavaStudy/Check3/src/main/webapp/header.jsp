@@ -10,18 +10,10 @@
 </head>
 <body>
 
-<table rules="none">
-<thead>
-<tr>
-<th>login</th>
- <th><% Date date = new Date();
+<div class="header">login <% Date date = new Date();
       SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
       String formatDate = sdf.format(date);%>
-   <%= formatDate %></th>
- </tr>
- </thead>
- </table>
-
+   <%= formatDate %></div>
 
 
 </body>

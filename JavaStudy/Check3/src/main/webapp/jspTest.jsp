@@ -12,6 +12,7 @@
 
 <div><%@ include file="header.jsp" %></div>
 
+<div class="main">
 <table rules="none">
 <tr>
 <th><label for="name1">name</label>
@@ -22,6 +23,7 @@
    <input type="text" name="id" id="id1"></td>
 </tr>
 </table>
+</div>
 
 <div><%@ include file="footer.jsp" %></div>
 
