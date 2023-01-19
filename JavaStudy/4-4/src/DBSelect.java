@@ -35,8 +35,8 @@ public class DBSelect {
 
         Connection connection = null;
         Statement statement = null;
-        ResultSet resultSet = null;
-
+        ResultSet resultSet = null;        
+       
         try {
             Class.forName(POSTGRES_DRIVER);
             // 問④ 問①〜③の定数を使ってデータベースと接続しなさい。
@@ -44,9 +44,9 @@ public class DBSelect {
             		JDBC_CONNECTION, USER, PASS);
             statement = connection.createStatement();
             // 問⑤ SHOHIN_IDが001と020のものを表示させるためのSQL文を記述しましょう。
-            String SQL = "SELECT SHOHIN_ID FROM tb_shohin WHERE SHOHIN_ID = '001' AND SHOHIN_ID = '020'";
-            resultSet = statement.executeQuery(SQL);
-
+            String SQL = "SELECT * FROM tb_shohin WHERE SHOHIN_ID = '001' OR SHOHIN_ID = '020'";
+            resultSet = statement.executeQuery(SQL);            
+            
             while (resultSet.next()) {
                 // 問⑥ それぞれカラム名を入力してください。
                 String column1 = resultSet.getString("SHOHIN_ID");
