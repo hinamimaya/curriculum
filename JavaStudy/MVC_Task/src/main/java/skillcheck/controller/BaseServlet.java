@@ -2,6 +2,7 @@ package skillcheck.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import javax.servlet.http.HttpServlet;
@@ -31,7 +32,7 @@ public abstract class BaseServlet extends HttpServlet {
 
     // FIXME Step-3: 定数定義
     // FIXME Step-3-1: リクエスト判別用のボタンの属性名を記述しなさい。
-    protected static final String CONST_ELEMENT_NAME_REQUEST = "request";
+    protected static final String CONST_ELEMENT_NAME_REQUEST = "requestType";
     protected static final String CONST_REQUST_KEY_FOR_SENDER = "sender";
     protected static final String CONST_REQUST_KEY_FOR_REDIRECT = "redirect";
     protected static final String CONST_REQUST_KEY_FOR_RESPONSE_BEAN = "responseBean";
@@ -151,7 +152,8 @@ public abstract class BaseServlet extends HttpServlet {
             // Tips2: 完全一致検索の社員情報取得を呼び出すこと
             // Tips3: 第二引数の渡し方に注意すること
             // ←ここへ記述
-              ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID, resEmployeeBean);
+        	EmployeeManagementService ems = new EmployeeManagementService();
+              ems.executeDBAccess(ExecuteCase.FIND_BY_EMPID, Arrays.asList());
         
         	
 

@@ -86,8 +86,8 @@
             <!-- 2. class属性と、適用するスタイルの記述-->
             <!-- Tips: common.cssより赤色の文字色を定義しているスタイルを確認 -->
             <!-- [ここへ記述] -->
-            <div class="error-labe">
-                <label>エラーメッセージ</label></div>
+            <div class="error-label">
+                <label> "該当する社員情報がありません。"</label></div>
             
             <br>
         <% } %>

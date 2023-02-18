@@ -46,7 +46,7 @@
     <br>
     <% if (requestStatus < 2 && !message.isEmpty()) { %>
         <!-- FIXME Step-2-2: 式（Expression）を用いてメッセージ（message）を表示しなさい。 -->
-       <% String text = "<p>該当する社員情報がありません。</p>"; %> 
+       <p><%=message%></p>
     <% } %>
     <% if (!empResultList.isEmpty()) { %>
     <div class="div-table-list">
