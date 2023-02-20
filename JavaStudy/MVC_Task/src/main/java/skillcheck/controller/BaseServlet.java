@@ -2,7 +2,6 @@ package skillcheck.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
 import javax.servlet.http.HttpServlet;
@@ -153,7 +152,7 @@ public abstract class BaseServlet extends HttpServlet {
             // Tips3: 第二引数の渡し方に注意すること
             // ←ここへ記述
         	EmployeeManagementService ems = new EmployeeManagementService();
-              ems.executeDBAccess(ExecuteCase.FIND_BY_EMPID, Arrays.asList());
+              ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID, resEmployeeBean);
         
         	
 
