@@ -205,7 +205,7 @@ public final class EmployeeManagementService extends BaseService implements Empl
                     // Tips: sbQueryは、sbQuery.toString()でStringへ変換
                     // [ここへ記述]
                     sbQuery.toString();
-                    PreparedStatement pstmt = connection.prepareStatement(ConstSQL.SELECT_BY_EMPID);
+                    PreparedStatement pstmt = connection.prepareStatement(ConstSQL.CONST_PLACEHOLDER_FOR_BIND_PARAM);
 
                     // LIKEを使用するため、パラメータを編集
                     final String empId = ExecuteCase.FIND_BY_EMPID_WITH_LIKE.equals(eCase)
