@@ -151,8 +151,8 @@ public abstract class BaseServlet extends HttpServlet {
             // Tips2: 完全一致検索の社員情報取得を呼び出すこと
             // Tips3: 第二引数の渡し方に注意すること
             // ←ここへ記述
-        	EmployeeManagementService ems = new EmployeeManagementService();
-              ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID, resEmployeeBean);
+        	EmployeeBean empid = new EmployeeBean(reqEmpId);
+             responseBean = ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID, empid);
         
         	
 

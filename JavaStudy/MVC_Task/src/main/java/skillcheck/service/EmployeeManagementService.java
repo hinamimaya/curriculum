@@ -1,6 +1,5 @@
 package skillcheck.service;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -187,7 +186,7 @@ public final class EmployeeManagementService extends BaseService implements Empl
                 // Tips1: ループ文を使用すること（正解は複数パターンあります）
                 // Tips2: 格納先はローカル変数のempとすること
                 // [ここへ記述]
-            	sbQuery.append(ConstSQL.SELECT_BY_EMPID);
+            	
             	for(int i = 0; i < pEmployeeBeanList.size(); i++ ){
             		emp = (pEmployeeBeanList.get(i = 0));
             	}
@@ -204,8 +203,8 @@ public final class EmployeeManagementService extends BaseService implements Empl
                     // 2. 1で作成したオブジェクトをpreparedStatementへ格納
                     // Tips: sbQueryは、sbQuery.toString()でStringへ変換
                     // [ここへ記述]
-                    sbQuery.toString();
-                    PreparedStatement pstmt = connection.prepareStatement(ConstSQL.CONST_PLACEHOLDER_FOR_BIND_PARAM);
+                    
+                    super.preparedStatement = connection.prepareStatement(sbQuery.toString());
 
                     // LIKEを使用するため、パラメータを編集
                     final String empId = ExecuteCase.FIND_BY_EMPID_WITH_LIKE.equals(eCase)
@@ -215,7 +214,7 @@ public final class EmployeeManagementService extends BaseService implements Empl
                     // FIXME Step-5-6: preparedStatementに適切なパラメーターをセットしなさい。
                     // Tips: パラメータをセットするインデックスに注意
                     // [ここへ記述]
-                    pstmt.setString(1, empId);
+                    super.preparedStatement.setString(1, empId);
 
                     // FIXME Step-5-7: preparedStatementよりSQL(SELECT文)を実行し、resultSetへ結果を格納しなさい。
                     // [ここへ記述]

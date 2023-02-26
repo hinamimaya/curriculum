@@ -87,7 +87,7 @@
             <!-- Tips: common.cssより赤色の文字色を定義しているスタイルを確認 -->
             <!-- [ここへ記述] -->
             <div class="error-label">
-                <label> "該当する社員情報がありません。"</label></div>
+                <label><%=message%></label></div>
             
             <br>
         <% } %>
@@ -97,7 +97,7 @@
             <div class="div-input-flex-area">
                 <div>
                     <label>社員番号　: </label>
-                    <input id="empId" type="text" name="empId" maxlength="5" value="<%=empId%>"><br>
+                    <input id="empId" type="text" name="empId" maxlength="5" value=""><br>
                 </div>
                 <div>
                     <label>パスワード: </label>
