@@ -6,12 +6,25 @@ function isEven() {
             if(numbers[i]%2==0){
                 let num = numbers[i];
                 console.log(num + 'は偶数です');/*numに、偶数のiが蓄積されていってほしい*/  
-            }else {
-                ;
             }
-            
         } 
         // console.log(num + 'は偶数です');
 }
 
 isEven();
+
+class Car{
+
+    constructor(gass,numb){
+        this.gass = gass;
+        this.numb = numb;
+    }
+
+    getNumGas(){
+        console.log("ガソリンは"+ this.gass+ "です。ナンバーは"+ this.numb + "です");
+    }
+
+}
+
+let car = new Car("○○", "△△");
+car.getNumGas();
