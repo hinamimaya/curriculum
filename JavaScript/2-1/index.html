@@ -14,10 +14,13 @@
 </head>
 <body>
     <div id="box"></div>
+    <input type="button" value="クリック" onclick="myfunc()">
     
     <script>
-        //問題①：idで要素を取得して、背景色を赤色に変更する処理を記述してください。
-        document.getElementById('box').style.backgroundColor = 'red';
+        //問題①：idで要素を取得して、背景色を赤色に変更する処理を記述してください。        
+        function myfunc() {
+            document.getElementById('box').style.backgroundColor = 'red';
+        }
     
            
     
