@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- jQueryを動かすために必要な物がここに必要 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" class="on">
+      <div id="left"></div>
+      <div id="right"></div>
+    </div>
+    <button class="click">クリック</button>
+    <script>
+    //  ここにjQueryを記入
+    
+    // $('.click').on("click",function (){
+      
+    //   if('.left, .right'){
+    //   $('.left, .right').animate({"width":"0%"},1000);
+    // }else{
+    //   $('.left, .right').animate({"width":"50%"},1000);
+    // }
+    
+    // })
+
+
+
+    $('.click').on("click",function(){
+      if($('#left, #right').hasClass('on')){
+        $(this).animate({"width":"0%"},1000);
+      }else{
+        $(this).animate({"width":"50%"},1000);
+
+      }
+    });
+       
+    
+  
+    </script>
+  </body>
+</html>
