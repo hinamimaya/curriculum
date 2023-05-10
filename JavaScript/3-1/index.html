@@ -9,33 +9,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="box" class="on">
-      <div id="left"></div>
-      <div id="right"></div>
+    <div class="box">
+      <div class="left"></div>
+      <div class="right"></div>
     </div>
     <button class="click">クリック</button>
+    <!-- onclick="actionToggle();" -->
     <script>
     //  ここにjQueryを記入
-    
-    // $('.click').on("click",function (){
-      
-    //   if('.left, .right'){
-    //   $('.left, .right').animate({"width":"0%"},1000);
-    // }else{
-    //   $('.left, .right').animate({"width":"50%"},1000);
-    // }
-    
-    // })
 
-
-
-    $('.click').on("click",function(){
-      if($('#left, #right').hasClass('on')){
-        $(this).animate({"width":"0%"},1000);
-      }else{
-        $(this).animate({"width":"50%"},1000);
-
-      }
+    $('button').on("click",function(){
+      $('.left, .right').toggleClass('action')
     });
        
     

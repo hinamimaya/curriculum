@@ -11,13 +11,14 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+	margin: 0; 
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -45,7 +46,7 @@ table {
     display: flex;
     justify-content: space-between;
 }
-#left{
+.left{
     width: 50%;
     height: 100vh;
     background-color: black;
@@ -57,7 +58,7 @@ table {
     width: 0;
     transition: all 2s ease;
 }
-#right{
+.right{
     width: 50%;
     height: 100vh;
     background-color: black;
@@ -74,4 +75,8 @@ table {
     top: 50%;
     left: 50%;
     transform: translate(-50%);
+}
+.action{
+    width:0%;
+    transition: all 2s ease;
 }
