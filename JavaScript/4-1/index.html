@@ -11,8 +11,8 @@
         <p>残タスク：{{ task }}/{{ total }}</p>
         <input type="text" v-model="addText" placeholder="ToDoを入力して">
         <button v-on:click="addToDo()">追加</button>
-        <button v-on:click="deleteBtn()">削除</button><hr>
-        <!-- <p v-if="'todo in list'==' '">現在タスクはありません</p> -->
+        <button v-on:click="deleteBtn()">削除</button><br>
+        <input type="text" v-model="keyword"><hr>
         <ul v-for="todo in list">
             <li>
                 <span v-bind:class="{ done: todo.isChecked }">
@@ -20,8 +20,7 @@
                 </span>
             </li> 
         </ul>
-        <!-- <p v-if="todo in list"></p> -->
-        <p v-if="todo in list==0">現在タスクはありません</p>
+        <p v-if="list.length==0">現在タスクはありません</p>
         
     </div>
 
