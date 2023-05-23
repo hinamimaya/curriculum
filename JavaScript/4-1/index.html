@@ -21,6 +21,14 @@
             </li> 
         </ul>
         <p v-if="list.length==0">現在タスクはありません</p>
+        <ul v-for="search in list">
+            <li v-if="keyword !== ''">
+                <span v-bind:class="{ done: search.isChecked }">
+                    <input type="checkbox" v-model="search.isChecked">{{ search.text }}
+                </span>
+            </li>
+                 
+        </ul>
         
     </div>
 

@@ -29,6 +29,8 @@ var app = new Vue({
                 });
             }
             this.addText = '';
+            // var toString = Object.prototype.toString;
+            // console.log(toString.call('isChecked'));
         },
         deleteBtn: function() {
             this.list = this.list.filter(function(todo) {
@@ -37,24 +39,35 @@ var app = new Vue({
         },
     },
     computed:{
-        // filteredList: function(){
-        //     var list = [];
-        //     for(var i in this.list){
-        //         var listin = this.list[i];
-        //         if(list.indexOf(this.keyword) !== -1){
-        //             list.push(listin);
-        //         }
-        //     }
-        //     return list;
-        // },
         task: function(){
-            // チェックが入っていないリストの数を表示したい
-            this.list = this.list.filter(function(todo) {
-                return !todo.isChecked;
-            });
+            let count = 0;
+            let list = this.list;
+            let length = list.length;
+            if(this.list[0] !== undefined){
+            console.log(this.list[0].isChecked);}
+            for(var i = 0; i < length; i++){
+                if(!list[i].isChecked){
+                    count++;
+                }
+            }
+            return count;
         },
         total: function(){
             return this.list.length;
         },
+        search: function(){
+            let list = [];
+            for(let i in this.list){
+                let searchList = this.list[i];
+                if(searchList.indexOf(this.keyword) !== -1){
+                    this.list.push({
+                        text: this.keyword, 
+                        isChecked: false,
+                    });
+                }
+            }
+            return list;                           
+        }
     }
+    
 });
