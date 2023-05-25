@@ -12,7 +12,7 @@
         <input type="text" v-model="addText" placeholder="ToDoを入力して">
         <button v-on:click="addToDo()">追加</button>
         <button v-on:click="deleteBtn()">削除</button><br>
-        <input type="text" v-model="keyword"><hr>
+        <input type="text" id="keyword"><hr>
         <ul v-for="todo in list">
             <li>
                 <span v-bind:class="{ done: todo.isChecked }">
@@ -21,7 +21,7 @@
             </li> 
         </ul>
         <p v-if="list.length==0">現在タスクはありません</p>
-        <ul v-for="search in list">
+        <ul v-for="list in search">
             <li v-if="keyword !== ''">
                 <span v-bind:class="{ done: search.isChecked }">
                     <input type="checkbox" v-model="search.isChecked">{{ search.text }}

@@ -4,6 +4,7 @@ var app = new Vue({
         list: [],
         addText: '',
         keyword: '',
+        searchResult: [],
         
     },
     //watchでlistの変更を監視
@@ -14,7 +15,15 @@ var app = new Vue({
                 localStorage.setItem("list", JSON.stringify(this.list));
             },
             deep: true
-        }
+        },
+        searchResult: {
+            handler: function() {
+                //localStorageにデータを保存
+                localStorage.setItem("searchResult", JSON.stringify(this.searchResult));
+            },
+            deep: true
+        },      
+        
     },
     //マウントされた時にlocalStorageからデータを取得
     mounted: function() {
@@ -56,11 +65,22 @@ var app = new Vue({
             return this.list.length;
         },
         search: function(){
+            var toString = Object.prototype.toString;
+            console.log(toString.call('searchList'));
+            // let searchResult = [];
+            // for(let i in this.searchResult){
+            //     let searchList = new String(this.searchResult[i]);                
+            //     if(searchList.indexOf(this.keyword) !== -1){
+            //         searchResult.push(searchList);
+            //     }
+            // }
+
+            // return this.searchResult;
             let list = [];
             for(let i in this.list){
-                let searchList = this.list[i];
+                let searchList = new String(this.list[i]);
                 if(searchList.indexOf(this.keyword) !== -1){
-                    this.list.push({
+                    list.push({
                         text: this.keyword, 
                         isChecked: false,
                     });
