@@ -1,11 +1,9 @@
 var app = new Vue({
     el: '#app',
     data: {
+        keyword: "",
         list: [],
-        addText: '',
-        keyword: '',
-        searchResult: [],
-        
+        addText: '',        
     },
     //watchでlistの変更を監視
     watch: {
@@ -65,29 +63,24 @@ var app = new Vue({
             return this.list.length;
         },
         search: function(){
-            var toString = Object.prototype.toString;
-            console.log(toString.call('searchList'));
-            // let searchResult = [];
-            // for(let i in this.searchResult){
-            //     let searchList = new String(this.searchResult[i]);                
-            //     if(searchList.indexOf(this.keyword) !== -1){
-            //         searchResult.push(searchList);
+
+            let searchList = []; 
+            for(let i = 0;i < this.list.length; i++){
+                if(this.list[i].text.indexOf(this.keyword) > -1){
+                    searchList.push(this.list[i].text);
+                };
+            }
+            return searchList;
+
+            // for(let i in this.list){
+            //     let searchList = new String(this.list[i]);
+            //     if(searchList.indexOf(String(this.keyword)) !== -1){
+            //         console.log(searchList.indexOf(this.keyword));
+            //         list.push(searchList);
             //     }
             // }
-
-            // return this.searchResult;
-            let list = [];
-            for(let i in this.list){
-                let searchList = new String(this.list[i]);
-                if(searchList.indexOf(this.keyword) !== -1){
-                    list.push({
-                        text: this.keyword, 
-                        isChecked: false,
-                    });
-                }
-            }
-            return list;                           
-        }
+            // return list;                           
+        },
     }
     
 });
